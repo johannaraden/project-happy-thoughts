@@ -1,0 +1,16 @@
+.message-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.submit-button {
+    margin-top: 1em;
+    width: 60%;
+    text-align: center;
+}
+
+.heart {
+    transform: scale(0.4);
+    margin: -10px;
+    text-align: center;
+}
