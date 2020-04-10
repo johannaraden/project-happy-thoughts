@@ -18,7 +18,7 @@ export const MessageInput = props => {
             }
         )
         .then(() => {
-        setMessage("")
+        window.location.reload()
         props.onFormSubmit(message)
         })
         
@@ -28,7 +28,7 @@ export const MessageInput = props => {
 
     return (
         <div>
-            <form className="message-form">
+            <form className="message-form" onSubmit={handleSubmit}>
                 <h3>What's making you happy right now?</h3>
                 <textarea
                 rows='2'
@@ -38,10 +38,9 @@ export const MessageInput = props => {
                 <button 
                     className="submit-button"
                     type="submit"
-                    onSubmit={handleSubmit}
                     value="Submit"
                     disabled= {message.length < 6 || message.length > 140 ? true : false}
-                    ><img className="heart" src="https://img.icons8.com/cotton/64/000000/like--v1.png"/>Send Happy Thought<img className="heart" src="https://img.icons8.com/cotton/64/000000/like--v1.png"/>
+                    >Send Happy Thought
                 </button>
                 <p>{message.length}/140</p>
             </form>

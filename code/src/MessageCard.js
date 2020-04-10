@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import moment from 'moment'
 import "./index.css"
 
 export const MessageCard = props => {
-    const {id, message, hearts, time} = props
+    const {id, hearts, time} = props
     // destructures the data into props object
     
     const likeClick = () => {
@@ -21,7 +21,7 @@ export const MessageCard = props => {
                 <div className="card-details">
                     <span className={hearts > 10 ? "lots" : hearts > 5 ? "few" : "none" } onClick={likeClick}>
                     {/* Conditional operators for setting different classes depending on number of likes */}
-                    <img className="heart" src="https://img.icons8.com/cotton/64/000000/like--v1.png"/>
+                    <img className="heart" alt="heart-icon" src="https://img.icons8.com/cotton/64/000000/like--v1.png"/>
                     </span>
                     <p className="like-p">x {hearts}</p>
                     <p className="time">{moment(time).fromNow()}</p>
