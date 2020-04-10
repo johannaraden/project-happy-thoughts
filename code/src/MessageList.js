@@ -5,17 +5,29 @@ import { MessageCard } from 'MessageCard'
 
 export const MessageList = () => {
 
-    const [messages, setMessages] = useState([]);
+   const [messages, setMessages] = useState([]);
    
+   // set state for the messages
 
     useEffect(() => {
         fetch('https://technigo-thoughts.herokuapp.com/')
           .then((res) => res.json())
           .then((data) => {
             setMessages(data)
-            console.log(data)
           })
       }, [])
+
+      // using useEffect to fetch messages
+
+      const onLiked = likedThoughtId => {
+        const updatedThoughts = messages.map((thought) => {
+          if (thought._id === likedThoughtId) {
+            thought.hearts += 1
+          }
+          return thought
+        })
+        setMessages(updatedThoughts)
+      }
 
 
       return (
@@ -23,8 +35,9 @@ export const MessageList = () => {
           {messages.map((message) => {
             return (
               <MessageCard 
-              key={message._id} hearts={message.hearts} message={message.message} time={message.createdAt}
+              key={message._id} id={message._id} hearts={message.hearts} message={message.message} time={message.createdAt} onLiked={onLiked}
               />
+            //   Prints out one Message Card component per each message in the array of thooughts
             )
           })}
         </section>

@@ -2,7 +2,7 @@
     border: 1px solid black;
     width: 25em;
     margin: 2em auto;
-    padding: 2em;
+    padding: 2em 2em 3em 2em;
     -webkit-box-shadow: 7px 7px 0px 1px rgba(0,0,0);
     -moz-box-shadow: 7px 7px 0px 1px rgba(0,0,0);
     -ms-box-shadow: 7px 7px 0px 1px rgba(0,0,0);

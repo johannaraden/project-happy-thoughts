@@ -7,6 +7,7 @@ export const App = () => {
   return (
     <div>
       <MessageInput />
+      {/* onFormSubmit={onFormSubmit} */}
       <MessageList /> 
     </div>
   )
