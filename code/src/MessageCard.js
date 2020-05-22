@@ -7,7 +7,7 @@ export const MessageCard = props => {
     // destructures the data into props object
     
     const likeClick = () => {
-      fetch(`https://technigo-thoughts.herokuapp.com/${id}/like`, {
+      fetch(`https://jr-happy-thoughts.herokuapp.com/thoughts/${id}/like`, {
         method: "POST",
         body: "",
         headers: { "Content-Type": "application/json" }
