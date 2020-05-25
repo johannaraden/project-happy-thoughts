@@ -3,7 +3,7 @@ import "./index.css"
 import "./MessageInput.css"
 
 
-const messageUrl = "https://jr-happy-thoughts.herokuapp.com/thoughts";
+const messageUrl = "https://jr-happy-thoughts.herokuapp.com/";
 
 export const MessageInput = props => {
 

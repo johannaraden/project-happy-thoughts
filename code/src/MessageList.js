@@ -10,7 +10,7 @@ export const MessageList = () => {
    // set state for the messages
 
     useEffect(() => {
-        fetch('https://jr-happy-thoughts.herokuapp.com/thoughts')
+        fetch('https://jr-happy-thoughts.herokuapp.com/')
           .then((res) => res.json())
           .then((data) => {
             setMessages(data)
